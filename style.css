@@ -1,0 +1,38 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+#form-title{
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #000;
+}
+#form{
+    width: 40rem;
+    text-align: center;
+    background-color: #eee;
+    padding: 10px 12px;
+    margin: auto;
+}
+.field{
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border: 0;
+    text-align: center;
+}
+.submit{
+    display: block;
+    padding: 10px 10px;
+    width: 100%;
+    border-radius: 12px;
+    color: #ffffff;
+    background-color: #34003b;
+    border: 0;
+    cursor: pointer;
+}
+#wlcm{
+    text-align: center;
+}
