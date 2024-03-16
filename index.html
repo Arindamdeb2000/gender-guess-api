@@ -4,12 +4,64 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Sourcing Hub - Pink or Blue Predictor</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        #form-title {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .field {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .submit {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit:hover {
+            background-color: #45a049;
+        }
+
+        #gender {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        #gender span {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div id="all">
         <h1 id="wlcm"></h1>
-        <div action="#" id="form">
+        <div id="form">
             <h1 id="form-title">Global Talent Evangelist Team's - Pink or Blue Predictor</h1>
             <div class="gender">
                 <h3 id="gender">Gender : </h3>
@@ -31,11 +83,11 @@
                 let gender = data["gender"];
                 document.getElementById("gender").innerHTML = "Gender : ";
                 if(gender == "female"){
-                    document.getElementById("gender").innerHTML += "Pink";
+                    document.getElementById("gender").innerHTML += "<span style='color: pink;'>Pink</span>";
                 } else if(gender == "male" ){
-                    document.getElementById("gender").innerHTML += "Blue";
+                    document.getElementById("gender").innerHTML += "<span style='color: blue;'>Blue</span>";
                 }else {
-                    document.getElementById("gender").innerHTML += "Undefined";
+                    document.getElementById("gender").innerHTML += "<span style='color: grey;'>Undefined</span>";
                 }
             })
         })
