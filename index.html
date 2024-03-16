@@ -36,7 +36,7 @@
         }
 
         .submit {
-            background-color: #f5c6bb;
+            background-color: #4CAF50;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -45,7 +45,7 @@
         }
 
         .submit:hover {
-            background-color: #fffdfd;
+            background-color: #45a049;
         }
 
         #gender {
@@ -55,6 +55,14 @@
 
         #gender span {
             font-weight: bold;
+        }
+
+        .male-symbol {
+            color: blue;
+        }
+
+        .female-symbol {
+            color: pink;
         }
     </style>
 </head>
@@ -73,24 +81,24 @@
 
     <script>
         let submitBtn = document.getElementById("submit");
-        submitBtn.addEventListener("click", ()=>{
+        submitBtn.addEventListener("click", () => {
             let name = document.getElementById("name").value;
-            let url = `https://api.genderize.io/?name=${name}`
+            let url = `https://api.genderize.io/?name=${name}`;
             fetch(url)
-            .then((response => response.json()))
-            .then((data) => {
+            .then(response => response.json())
+            .then(data => {
                 console.log(data["gender"]);
                 let gender = data["gender"];
                 document.getElementById("gender").innerHTML = "Gender : ";
-                if(gender == "female"){
-                    document.getElementById("gender").innerHTML += "<span style='color: pink;'>Pink</span>";
-                } else if(gender == "male" ){
-                    document.getElementById("gender").innerHTML += "<span style='color: blue;'>Blue</span>";
-                }else {
-                    document.getElementById("gender").innerHTML += "<span style='color: grey;'>Undefined</span>";
+                if (gender == "female") {
+                    document.getElementById("gender").innerHTML += "<span class='female-symbol'>♀</span> Pink";
+                } else if (gender == "male") {
+                    document.getElementById("gender").innerHTML += "<span class='male-symbol'>♂</span> Blue";
+                } else {
+                    document.getElementById("gender").innerHTML += "Undefined";
                 }
-            })
-        })
+            });
+        });
     </script>
 </body>
 </html>
