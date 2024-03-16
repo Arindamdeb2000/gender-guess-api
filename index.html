@@ -1,33 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Sourcing Hub - Pink or Blue Predictor</title>
     <style>
         body {
-            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
+            background-color: #ff0000; /* Red background */
+            color: #fff; /* White text */
             text-align: center;
-            padding: 20px;
+        }
+
+        #all {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         #form {
-            background-color: #fff;
+            background-color: #fff; /* White form background */
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
-            margin: 0 auto;
+            width: 100%;
         }
 
         #form-title {
-            color: #333;
+            color: #333; /* Dark text for form title */
             margin-bottom: 20px;
         }
 
         .field {
-            width: 100%;
+            width: calc(100% - 22px); /* Adjusted width for input fields */
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
@@ -36,7 +45,7 @@
         }
 
         .submit {
-            background-color: #4CAF50;
+            background-color: #4CAF50; /* Green submit button */
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -45,7 +54,7 @@
         }
 
         .submit:hover {
-            background-color: #45a049;
+            background-color: #45a049; /* Darker green on hover */
         }
 
         #gender {
@@ -58,19 +67,18 @@
         }
 
         .male-symbol {
-            color: blue;
+            color: blue; /* Blue color for male symbol */
         }
 
         .female-symbol {
-            color: pink;
+            color: pink; /* Pink color for female symbol */
         }
     </style>
 </head>
 <body>
     <div id="all">
-        <h1 id="wlcm"></h1>
         <div id="form">
-            <h1 id="form-title">GTE Team's - Pink or Blue Predictor</h1>
+            <h1 id="form-title">Global Talent Evangelist Team's - Pink or Blue Predictor</h1>
             <div class="gender">
                 <h3 id="gender">Gender : </h3>
             </div>
