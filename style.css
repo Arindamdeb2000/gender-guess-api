@@ -10,7 +10,7 @@ body{
 #form{
     width: 40rem;
     text-align: center;
-    background-color: #eee;
+    background-color: #fef0f0;
     padding: 10px 12px;
     margin: auto;
 }
@@ -28,8 +28,8 @@ body{
     padding: 10px 10px;
     width: 100%;
     border-radius: 12px;
-    color: #ffffff;
-    background-color: #34003b;
+    color: #de233b;
+    background-color: #eb2414;
     border: 0;
     cursor: pointer;
 }
