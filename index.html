@@ -9,8 +9,11 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            background-color: #ff0000; /* Red background */
+            color: #fff; /* White text */
             text-align: center;
         }
+
 
         #background-container {
             background-image: url('https://assets.teenvogue.com/photos/5a8601865bc1fb447d0feee7/16:9/w_2560%2Cc_limit/Lede.jpg'); /* Update the path to your image */
@@ -24,7 +27,7 @@
             z-index: -1; /* Ensure the background is behind other content */
         }
 
-        #all {
+          #all {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,7 +35,7 @@
         }
 
         #form {
-            background-color: rgba(255, 255, 255, 0.8); /* White form background with opacity */
+            background-color: #fff; /* White form background */
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -40,22 +43,83 @@
             width: 100%;
         }
 
-        /* Your existing CSS styles */
-        /* ... */
+        #form-title {
+            color: #333; /* Dark text for form title */
+            margin-bottom: 20px;
+        }
+
+        .field {
+            width: calc(100% - 22px); /* Adjusted width for input fields */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .submit {
+            background-color: #f60b09; /* red submit button */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit:hover {
+            background-color: #fa0b05; /* Darker red on hover */
+        }
+
+        #gender {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        #gender span {
+            font-weight: bold;
+        }
+
+        .male-symbol {
+            color: blue; /* Blue color for male symbol */
+        }
+
+        .female-symbol {
+            color: pink; /* Pink color for female symbol */
+        }
     </style>
 </head>
 <body>
-    <div id="background-container"></div>
     <div id="all">
         <div id="form">
-            <!-- Your form content -->
-            <!-- ... -->
+            <h1 id="form-title">GSH Team's - Pink or Blue Predictor</h1>
+            <div class="gender">
+                <h3 id="gender">Gender : </h3>
+            </div>
+            <input id="name" name="name" class="field" type="text" placeholder="Name" required>
+            <button type="button" value="submit" id="submit" class="submit">Submit</button>
         </div>
     </div>
 
     <script>
-        // Your existing JavaScript code
-        // ...
+        let submitBtn = document.getElementById("submit");
+        submitBtn.addEventListener("click", () => {
+            let name = document.getElementById("name").value;
+            let url = `https://api.genderize.io/?name=${name}`;
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data["gender"]);
+                let gender = data["gender"];
+                document.getElementById("gender").innerHTML = "Gender : ";
+                if (gender == "female") {
+                    document.getElementById("gender").innerHTML += "<span class='female-symbol'>♀</span> Pink";
+                } else if (gender == "male") {
+                    document.getElementById("gender").innerHTML += "<span class='male-symbol'>♂</span> Blue";
+                } else {
+                    document.getElementById("gender").innerHTML += "Undefined";
+                }
+            });
+        });
     </script>
 </body>
 </html>
